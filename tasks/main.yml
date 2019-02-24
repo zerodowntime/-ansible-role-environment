@@ -1,0 +1,19 @@
+---
+# zerodowntime.environment/tasks/main.yml
+
+- name: environment | Set environments
+  lineinfile:
+    dest: "{{ environment__config_file }}"
+    state: "{{ 'absent' if item.value is none else 'present' }}"
+    regexp: "^{{ item.key }}"
+    line: "{{ item.key }}={{ item.value }}"
+    owner: root
+    group: root
+    mode: 0644
+    create: true
+    seuser: system_u
+    serole: object_r
+    setype: etc_t
+  loop: "{{ environment__env|dict2items }}"
+  tags:
+    - environment

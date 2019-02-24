@@ -1,0 +1,6 @@
+---
+# zerodowntime.environment/vars/main.yml
+
+# environment__config_file: string
+# Path to environment file
+environment__config_file: /etc/environment

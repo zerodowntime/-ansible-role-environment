@@ -1,0 +1,12 @@
+---
+# zerodowntime.environment/defaults/main.yml
+
+# docs: list of system ENV
+#       if value was `!!null` than this key will be removed
+# environment__env: dict
+# example:
+# environment__env:
+#   EDITOR: vim
+#   FOO: bar
+#   WHOAMI: !!null
+environment__env: {}
