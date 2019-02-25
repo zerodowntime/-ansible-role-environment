@@ -4,8 +4,8 @@
   hosts: all
   become: true
   roles:
-    - role: zerodowntime.vim
-      vim__rc: |
-        set number
-        set showbreak=+++
-        set nospell
+    - role: zerodowntime.environment
+      environment__env:
+        EDITOR: vim
+        FOO: bar
+        WHOAMI: !!null
